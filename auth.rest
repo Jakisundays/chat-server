@@ -1,0 +1,38 @@
+POST http://localhost:8000/api/auth/register
+Content-Type: application/json
+
+{
+    "username": "jake3",
+    "email": "email@email.com",
+    "password": "panama11"
+}
+###
+POST http://localhost:8000/api/auth/login
+Content-Type: application/json
+
+{
+     "username": "kokito",
+     "password": "kokoloco"
+}
+
+###
+GET  http://localhost:8000/api/auth/allusers/
+
+###
+POST http://localhost:8000/api/message/getmsg
+Content-Type: application/json
+
+{
+    "from": "63e2bb8d46dc366ee548df9e",
+    "to": "63e2bbd046dc366ee548dfa3"
+}
+
+###
+POST http://localhost:8000/api/message/addmsg
+Content-Type: application/json
+
+{
+    "message": "second message",
+    "from": "63e2bbd046dc366ee548dfa3",
+    "to": "63e2bb8d46dc366ee548df9e"
+}
