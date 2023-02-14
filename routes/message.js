@@ -1,9 +1,9 @@
 const router = require("express").Router();
 const jwt = require("jsonwebtoken");
 const Msg = require("../models/message");
-const verifyToken = require('../middleware/verifyToken')
+const verifyToken = require("../middleware/verifyToken");
 
-router.post("/getmsg",verifyToken, async (req, res) => {
+router.post("/getmsg", verifyToken, async (req, res) => {
   const { from, to } = req.body;
   try {
     //find all docs where the "users" field contains both the "from" value and the "to" value.
@@ -17,7 +17,7 @@ router.post("/getmsg",verifyToken, async (req, res) => {
     const projectedMessages = messages.map((msg) => {
       const fromSelf = msg.sender.toString() == from;
       const message = msg.message.text;
-      const createdAt = msg.createdAt
+      const createdAt = msg.createdAt;
       return { fromSelf, message, createdAt };
     });
     res.json(projectedMessages);
@@ -26,7 +26,7 @@ router.post("/getmsg",verifyToken, async (req, res) => {
   }
 });
 
-router.post("/addmsg",verifyToken, async (req, res) => {
+router.post("/addmsg", verifyToken, async (req, res) => {
   const { from, to, message } = req.body;
   try {
     await Msg.create({
