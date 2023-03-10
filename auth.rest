@@ -1,8 +1,8 @@
-POST http://localhost:8000/api/auth/register
+POST https://chat-server-1wnq.onrender.com/api/auth/register
 Content-Type: application/json
 
 {
-    "username": "jake3",
+    "username": "anotherUser",
     "email": "email@email.com",
     "password": "panama11"
 }

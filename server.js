@@ -25,6 +25,10 @@ mongoose.connect(
   () => console.log("connected to db")
 );
 
+app.get('/', (req,res) => {
+  res.send('hello world')
+})
+
 //Socket.io
 const server = app.listen(
   PORT,
